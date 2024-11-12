@@ -11,10 +11,7 @@ def htop():
     # Your full name
     full_name = "Pavan Venkat Mylavarapu"
 
-    # System username
     username = os.getenv("USER") or os.getlogin()
-
-    # Server time in IST
     ist = pytz.timezone('Asia/Kolkata')
     server_time = datetime.now(ist).strftime('%Y-%m-%d %H:%M:%S.%f')
 
@@ -27,10 +24,8 @@ def htop():
     <p><b>user:</b> {username}</p>
     <p><b>Server Time (IST):</b> {server_time}</p>
     <pre><Strong>TOP OUTPUT:</Strong>\n\n{top_output}</pre>
-
     """
     return response
 
 if __name__ == '__main__':
-    # Run the app on a public port
     app.run(host='0.0.0.0', port=5000)
